@@ -1,0 +1,16 @@
+{
+  "name": "fl-journeys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  },
+  "scripts": {
+    "start": "yarn parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
