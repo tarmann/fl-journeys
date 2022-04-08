@@ -12,25 +12,25 @@ export const TERRAINS = {
 }
 
 export const TERRAIN_DETAILS = {
-  plains: {
+  [TERRAINS.PLAINS]: {
     name: 'plains',
     movement: 'open',
     forage: -1,
     hunt: 1
   },
-  forest: {
+  [TERRAINS.FOREST]: {
     name: 'forest',
     movement: 'open',
     forage: 1,
     hunt: 1
   },
-  darkForest: {
+  [TERRAINS.DARK_FOREST]: {
     name: 'darkForest',
     movement: 'open',
     forage: -1,
     hunt: 0
   },
-  hills: {
+  [TERRAINS.HILLS]: {
     name: 'hills',
     movement: 'open',
     forage: 0,
