@@ -2,7 +2,7 @@ import { SKILLS } from '../constants/character';
 import { SEASONS_DETAILS } from '../constants/seasons';
 import { TERRAIN_DETAILS } from '../constants/terrain';
 
-import { FORAGE_MISHAPS } from '../constants/mishaps/forage_mishaps';
+import { FORAGE_MISHAPS } from '../mishaps/forage_mishaps';
 
 import { rollSkill } from '../utils/rollUtils';
 import { rollD6 } from '../utils/diceUtils';
@@ -34,3 +34,5 @@ export const forage = (char, seasonName, terrainName, quarterName, { isHiking = 
     result
   }
 }
+
+export default forage;

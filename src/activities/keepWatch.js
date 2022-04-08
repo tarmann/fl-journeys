@@ -3,8 +3,7 @@ import { SEASONS_DETAILS } from '../constants/seasons';
 import { TERRAIN_DETAILS } from '../constants/terrain';
 
 import { rollSkill } from '../utils/rollUtils';
-
-const getIsDarkMod = (season, quarterName) => season.light[quarterName] ? 0 : -2;
+import { getIsDarkMod } from '../utils/journeyUtils';
 
 export const keepWatch = (char, seasonName, terrainName, quarterName) => {
   const season = SEASONS_DETAILS[seasonName];
@@ -31,3 +30,5 @@ export const keepWatch = (char, seasonName, terrainName, quarterName) => {
     result
   }
 }
+
+export default keepWatch;

@@ -1,7 +1,7 @@
 export const TERRAINS = {
   PLAINS: 'plains',
   FOREST: 'forest',
-  DARKF_OREST: 'darkForest',
+  DARK_FOREST: 'darkForest',
   HILLS: 'hills',
   MOUNTAINS: 'mountains',
   HIGH_MOUNTAINS: 'highMountains',

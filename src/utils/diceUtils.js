@@ -7,3 +7,5 @@ export const rollFLDice = (type) => {
 
   return { type, result, hit: result >= 6, miss: result === 1 };
 };
+
+export const rollD66 = () => parseInt(rollD6() + '' + rollD6(), 10);
