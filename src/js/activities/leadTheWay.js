@@ -35,7 +35,7 @@ export const leadTheWay = (char, seasonName, terrainName, quarterName, { adaptab
   let result = null;
 
   if(!skillRoll.hits){
-    result = `${char.name} fail on finding thw way. \n ${getMishap()}`
+    result = `${char.name} fail on finding thw way. <br /> ${getMishap()}`
   } else {
     result = `${char.name} find the way.`
   }

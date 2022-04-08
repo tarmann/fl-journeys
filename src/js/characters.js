@@ -1,13 +1,14 @@
 import { createCharacter } from './utils/characterUtils';
 
 export const CHARACTERS = {
+  AMERGIN: createCharacter({
+    name: 'Amergin',
+  }),
+
   ARIS: createCharacter({
     name: 'Aris',
-    witsTotal: 6,
-    witsCurrent: 6,
-    survival: 2,
-    scouting: 0,
   }),
+
   BEPO: createCharacter({
     name: 'Bepo',
     strengthTotal: 3,
@@ -27,6 +28,7 @@ export const CHARACTERS = {
     water: 6,
     silver: 8
   }),
+
   HAWKINS: createCharacter({
     name: 'Hawkins',
     strengthTotal: 2,
@@ -37,11 +39,9 @@ export const CHARACTERS = {
     witsCurrent: 2,
     empathyTotal: 6,
     empathyCurrent: 6,
-
     performance: 2,
-
     food: 6,
     water: 6,
-    silver: 8
+    silver: 8,
   })
 }
