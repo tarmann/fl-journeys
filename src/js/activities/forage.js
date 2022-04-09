@@ -21,7 +21,7 @@ export const forage = (char, seasonName, terrainName, quarterName, { isHiking = 
 
   if(!skillRoll.hits){
     mishap = FORAGE_MISHAPS[rollD6()-1];
-    result = mishap.description
+    result = `${char.name} fails to forage for food. <br /> ${mishap.description}`;
   } else {
     result = `${char.name} find ${skillRoll.hits} units of food.`
   }

@@ -3,10 +3,22 @@ import { createCharacter } from './utils/characterUtils';
 export const CHARACTERS = {
   AMERGIN: createCharacter({
     name: 'Amergin',
+    strengthTotal: 3,
+    strengthCurrent: 3,
+    agilityTotal: 6,
+    agilityTotal: 6,
+    witsTotal: 3,
+    witsCurrent: 3,
   }),
 
   ARIS: createCharacter({
     name: 'Aris',
+    strengthTotal: 3,
+    strengthCurrent: 3,
+    agilityTotal: 6,
+    agilityTotal: 6,
+    witsTotal: 3,
+    witsCurrent: 3,
   }),
 
   BEPO: createCharacter({

@@ -9,6 +9,7 @@ import { CHARACTERS } from './characters';
 import * as performActivity from './activities';
 
 import UISelect from './components/UISelect';
+import DicePool from './components/DicePool';
 
 const season = SEASONS.SPRING;
 const terrain = TERRAINS.DARK_FOREST;
@@ -31,14 +32,27 @@ const App = () => {
     quarter
   ]
 
-  const output = Object
+  const actionsOutput = Object
     .keys(activities)
     .map(charName => {
       const activityName = activities[charName];
       const char = CHARACTERS[charName];
       const doIt = performActivity[activityName];
-      return doIt ? doIt(char, ...setting).result : null;
+      return doIt ? doIt(char, ...setting) : null;
     });
+
+    console.log(actionsOutput);
+
+  const output = actionsOutput.map(action => {
+    if(!action) return null;
+    return (
+      <p>
+        <div>{action.result}123</div>
+        <div><DicePool results={action.roll.results} />...</div>
+        <div><DicePool results={action.roll.pushResults} /></div>
+      </p>
+    )
+  });
 
   return (
     <div>
@@ -74,9 +88,7 @@ const App = () => {
       </div>
       <hr />
 
-      <div
-        dangerouslySetInnerHTML={{__html: output.map(i => `<p>${i}</p>`).join('')}}
-      />
+      {output}
     </div>
   )
 }
