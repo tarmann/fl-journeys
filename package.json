@@ -2,7 +2,6 @@
   "name": "fl-journeys",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -14,7 +13,7 @@
   "scripts": {
     "start": "yarn parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html",
+    "builds": "parcel build src/index.html",
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "author": "",
