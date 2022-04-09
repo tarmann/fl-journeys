@@ -47,9 +47,15 @@ const App = () => {
     if(!action) return null;
     return (
       <p>
-        <div>{action.result}123</div>
-        <div><DicePool results={action.roll.results} />.</div>
-        <div><DicePool results={action.roll.pushResults} /></div>
+        <div>{action.result}</div>
+        <div>
+          <DicePool results={action.roll.results} />
+          ({action.roll.hits})
+        </div>
+        <div>
+          <DicePool results={action.roll.pushResults} />
+          ({action.roll.pushHits})({action.roll.pushBaseDamage})
+        </div>
       </p>
     )
   });

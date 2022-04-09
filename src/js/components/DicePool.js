@@ -1,7 +1,9 @@
+import DiceRoll from './DiceRoll';
+
 const DicePool = ({
   results,
 }) => {
-  return results.map(die => `[${die.result}]`);
+  return results.map(roll => <DiceRoll roll={roll} />);
 }
 
 export default DicePool;

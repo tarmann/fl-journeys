@@ -19,6 +19,8 @@ export const CHARACTERS = {
     agilityTotal: 6,
     witsTotal: 3,
     witsCurrent: 3,
+    scouting: 3,
+    survival: 3,
   }),
 
   BEPO: createCharacter({
