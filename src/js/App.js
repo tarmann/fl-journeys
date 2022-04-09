@@ -48,7 +48,7 @@ const App = () => {
     return (
       <p>
         <div>{action.result}123</div>
-        <div><DicePool results={action.roll.results} />...</div>
+        <div><DicePool results={action.roll.results} />.</div>
         <div><DicePool results={action.roll.pushResults} /></div>
       </p>
     )
