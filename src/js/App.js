@@ -10,6 +10,7 @@ import * as performActivity from './activities';
 
 import UISelect from './components/UISelect';
 import CharacterAction from './components/CharacterAction';
+import CharacterSheet from './components/CharacterSheet';
 
 const App = () => {
   const [activities, setActivities] = useState({});
@@ -78,6 +79,9 @@ const App = () => {
       <hr />
 
       {output}
+
+      <hr />
+      <CharacterSheet char={CHARACTERS.ARIS} />
     </div>
   )
 }

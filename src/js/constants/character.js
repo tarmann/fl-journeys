@@ -1,5 +1,6 @@
 export const ATTRIBUTES = {
-  STREGTH: 'stregth',
+  STRENGTH: 'strength',
+  AGILITY: 'agility',
   WITS: 'wits',
   EMPATHY: 'empathy'
 }
