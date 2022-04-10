@@ -1,7 +1,7 @@
 import forage from './forage';
 import leadTheWay from './leadTheWay';
 import keepWatch from './keepWatch';
-import makeCamp from './makeCamp';
+import makeCamp from './makeCamp_';
 import fish from './fish';
 import hunt from './hunt';
 

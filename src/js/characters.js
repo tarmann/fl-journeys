@@ -9,6 +9,9 @@ export const CHARACTERS = {
     agilityTotal: 6,
     witsTotal: 3,
     witsCurrent: 3,
+
+    survival: 3,
+    scouting: 3
   }),
 
   ARIS: createCharacter({

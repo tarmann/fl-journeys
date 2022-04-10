@@ -13,6 +13,7 @@ class Activity {
     this.char = char;
     this.season = SEASONS_DETAILS[setting.season];
     this.terrain = TERRAIN_DETAILS[setting.terrain];
+    this.quarterName = setting.quarter;
     this.skill = options.adaptable ||  this.getActivitySkill();
     this.options = options;
     return this;
@@ -30,6 +31,7 @@ class Activity {
     return 0;
   }
 
+  // TODO: roll mishap once
   getMishap(){
     return null;
   }
@@ -39,11 +41,19 @@ class Activity {
     return this;
   }
 
+  getFailedResult(){
+    return `${this.char.name} failed. ${this.getMishap().result}`;
+  }
+
+  getSuccessResult(){
+    return `${this.char.name} is successful.`
+  }
+
   getResult(){
     if(!this.skillRoll.hits){
-      return `${this.char.name} failed.`;
+      return this.getFailedResult();
     } else {
-      return `${this.char.name} is successful.`
+      return this.getSuccessResult();
     }    
   }
 
@@ -52,7 +62,7 @@ class Activity {
       season: this.season,
       terrain: this.terrain,
       roll: this.skillRoll,
-      mishap: this.mishap,
+      mishap: this.getMishap(),
       result: this.getResult()
     }
   }

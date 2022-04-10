@@ -9,12 +9,7 @@ import { CHARACTERS } from './characters';
 import * as performActivity from './activities';
 
 import UISelect from './components/UISelect';
-import DicePool from './components/DicePool';
-
-const season = SEASONS.SPRING;
-const terrain = TERRAINS.DARK_FOREST;
-const quarter = QUARTERS.MORNING;
-const setting = [season, terrain, quarter];
+import CharacterAction from './components/CharacterAction';
 
 const App = () => {
   const [activities, setActivities] = useState({});
@@ -32,6 +27,7 @@ const App = () => {
     quarter
   ]
 
+  // run action
   const actionsOutput = Object
     .keys(activities)
     .map(charName => {
@@ -41,23 +37,10 @@ const App = () => {
       return doIt ? doIt(char, ...setting) : null;
     });
 
-    console.log(actionsOutput);
-
+  // render actions
   const output = actionsOutput.map(action => {
     if(!action) return null;
-    return (
-      <p>
-        <div>{action.result}</div>
-        <div>
-          <DicePool results={action.roll.results} />
-          ({action.roll.hits})
-        </div>
-        <div>
-          <DicePool results={action.roll.pushResults} />
-          ({action.roll.pushHits})({action.roll.pushBaseDamage})
-        </div>
-      </p>
-    )
+    return <CharacterAction action={action} />;
   });
 
   return (
