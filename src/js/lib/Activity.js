@@ -33,7 +33,7 @@ class Activity {
 
   // TODO: roll mishap once
   getMishap(){
-    return null;
+    return {result: null};
   }
 
   roll(){

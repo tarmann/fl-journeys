@@ -1,11 +1,6 @@
 import { ATTRIBUTES, SKILLS } from "../constants/character";
 
-const UIInput = ({ name, value, onChange }) => (
-  <div>
-    <label>{name}</label>
-    <input type="text" name={name} value={value} onChange={onChange} />
-  </div>
-)
+import UIInput from './UIInput';
 
 const CharacterSheet = ({ char }) => {
   const attributes = Object.values(ATTRIBUTES)

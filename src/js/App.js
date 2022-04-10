@@ -11,12 +11,14 @@ import * as performActivity from './activities';
 import UISelect from './components/UISelect';
 import CharacterAction from './components/CharacterAction';
 import CharacterSheet from './components/CharacterSheet';
+import ActivitySelect from './components/ActivitySelect';
 
 const App = () => {
   const [activities, setActivities] = useState({});
   const [season, setSeason] = useState(SEASONS.SPRING);
   const [terrain, setTerrain] = useState(TERRAINS.DARK_FOREST);
   const [quarter, setQuarter] = useState(QUARTERS.MORNING);
+  const [characters, setCharacters] = useState(CHARACTERS);
 
   const handleChangeActivities = (character, activity) => {
     setActivities({...activities, [character]: activity});
@@ -31,9 +33,9 @@ const App = () => {
   // run action
   const actionsOutput = Object
     .keys(activities)
-    .map(charName => {
+    .map(charName => {s
       const activityName = activities[charName];
-      const char = CHARACTERS[charName];
+      const char = characters[charName];
       const doIt = performActivity[activityName];
       return doIt ? doIt(char, ...setting) : null;
     });
@@ -67,20 +69,16 @@ const App = () => {
 
       <div>
         {Object.keys(CHARACTERS).map(charName => (
-          <p>
-            {charName} will...
-            <UISelect
-              options={ACTIVITIES}
-              onChange={updatedActivity => handleChangeActivities(charName, updatedActivity)}
-            />
-          </p>
+          <ActivitySelect
+            charName={charName}
+            onChange={updatedActivity => handleChangeActivities(charName, updatedActivity)}
+          />
         ))}
       </div>
       <hr />
 
       {output}
 
-      <hr />
       <CharacterSheet char={CHARACTERS.ARIS} />
     </div>
   )

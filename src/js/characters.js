@@ -22,6 +22,7 @@ export const CHARACTERS = {
     agilityTotal: 6,
     witsTotal: 3,
     witsCurrent: 3,
+    
     scouting: 3,
     survival: 3,
   }),
@@ -36,13 +37,16 @@ export const CHARACTERS = {
     witsCurrent: 3,
     empathyTotal: 3,
     empathyCurrent: 3,
+    
     melee: 2,
     stealth: 2,
     slightofhand: 2,
     move: 1,
     manipulation: 1,
+    
     food: 6,
     water: 6,
+
     silver: 8
   }),
 
@@ -57,8 +61,10 @@ export const CHARACTERS = {
     empathyTotal: 6,
     empathyCurrent: 6,
     performance: 2,
+    
     food: 6,
     water: 6,
+    
     silver: 8,
   })
 }
