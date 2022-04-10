@@ -1,10 +1,11 @@
 import { BASE_SKILL_ATTRIBUTE } from '../constants/character';
 
-import { rollFLDice } from './diceUtils';
-
-const getHits = results => results.filter(i => i.hit === true).length;
-const getMisses = results => results.filter(i => i.miss === true).length;
-const getBaseDamage = results => results.filter(i => i.miss === true && i.type === 'base').length;
+import {
+  rollFLDice,
+  getHits,
+  getMisses,
+  getBaseDamage,
+} from './diceUtils';
 
 export const rollSkill = (char, attr, mod = 0) => {
   const baseAttr = BASE_SKILL_ATTRIBUTE[attr];
@@ -36,8 +37,6 @@ export const rollSkill = (char, attr, mod = 0) => {
     pushHits: getHits(pushResults),
     pushBaseDamage: getBaseDamage(pushResults)
   }
-
-  console.log(rollData);
 
   return rollData;
 }
