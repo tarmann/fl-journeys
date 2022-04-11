@@ -1,7 +1,7 @@
 import { createCharacter } from './utils/characterUtils';
 
-export const CHARACTERS_DATA = {
-  AMERGIN: createCharacter({
+export const CHARACTERS_DATA = [
+  createCharacter({
     name: 'Amergin',
     strengthTotal: 3,
     strengthCurrent: 3,
@@ -14,7 +14,7 @@ export const CHARACTERS_DATA = {
     scouting: 3
   }),
 
-  ARIS: createCharacter({
+  createCharacter({
     name: 'Aris',
     strengthTotal: 3,
     strengthCurrent: 3,
@@ -27,7 +27,7 @@ export const CHARACTERS_DATA = {
     survival: 3,
   }),
 
-  BEPO: createCharacter({
+  createCharacter({
     name: 'Bepo',
     strengthTotal: 3,
     strengthCurrent: 3,
@@ -50,7 +50,7 @@ export const CHARACTERS_DATA = {
     silver: 8
   }),
 
-  HAWKINS: createCharacter({
+  createCharacter({
     name: 'Hawkins',
     strengthTotal: 2,
     strengthCurrent: 2,
@@ -68,4 +68,4 @@ export const CHARACTERS_DATA = {
 
     silver: 8,
   })
-}
+]]

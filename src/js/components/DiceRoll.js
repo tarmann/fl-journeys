@@ -39,7 +39,7 @@ const DiceRoll = ({
   if(!image) return;
 
   return (
-    <img src={image} width="30" />
+    <img src={image} className="dice-roll" width="30" />
   )
 }
 

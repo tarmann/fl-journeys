@@ -39,9 +39,9 @@ const App = () => {
   // run action
   const actionsOutput = Object
     .keys(activities)
-    .map(charName => {s
+    .map(charName => {
       const activityName = activities[charName];
-      const char = characters[charName];
+      const char = characters.find(i => i.name === charName);
       const doIt = performActivity[activityName];
       return doIt ? doIt(char, ...setting) : null;
     });
@@ -54,6 +54,8 @@ const App = () => {
 
   return (
     <div>
+      <h1>Forbidden Lands</h1>
+      <h2>Journey Calculator</h2>
       <div>
         <UISelect
           value={season}
@@ -74,10 +76,10 @@ const App = () => {
       <hr/>
 
       <div>
-        {Object.keys(characters).map(charName => (
+        {characters.map((char) => (
           <ActivitySelect
-            charName={charName}
-            onChange={updatedActivity => handleChangeActivities(charName, updatedActivity)}
+            charName={char.name}
+            onChange={updatedActivity => handleChangeActivities(char.name, updatedActivity)}
           />
         ))}
       </div>
@@ -86,8 +88,8 @@ const App = () => {
       {output}
 
       <CharacterSheet
-        char={characters.ARIS}
-        onChange={updatedChar => handleChangeCharacter('ARIS', updatedChar)}
+        char={characters[0]}
+        onChange={updatedChar => handleChangeCharacter('Aris', updatedChar)}
       />
     </div>
   )
