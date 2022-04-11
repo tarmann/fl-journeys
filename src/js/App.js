@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { SEASONS } from './constants/seasons';
 import { TERRAINS } from './constants/terrain';
 import { QUARTERS } from './constants/quarters';
-import { ACTIVITIES } from './constants/activities';
-import { CHARACTERS } from './characters';
+import { CHARACTERS_DATA } from './characters';
 
 import * as performActivity from './activities';
 
@@ -18,10 +17,17 @@ const App = () => {
   const [season, setSeason] = useState(SEASONS.SPRING);
   const [terrain, setTerrain] = useState(TERRAINS.DARK_FOREST);
   const [quarter, setQuarter] = useState(QUARTERS.MORNING);
-  const [characters, setCharacters] = useState(CHARACTERS);
+  const [characters, setCharacters] = useState(CHARACTERS_DATA);
 
   const handleChangeActivities = (character, activity) => {
     setActivities({...activities, [character]: activity});
+  }
+
+  const handleChangeCharacter = (charName, updatedChar) => {
+    setCharacters({
+      ...characters,
+      [charName]: updatedChar
+    })
   }
 
   const setting = [
@@ -68,7 +74,7 @@ const App = () => {
       <hr/>
 
       <div>
-        {Object.keys(CHARACTERS).map(charName => (
+        {Object.keys(characters).map(charName => (
           <ActivitySelect
             charName={charName}
             onChange={updatedActivity => handleChangeActivities(charName, updatedActivity)}
@@ -79,7 +85,10 @@ const App = () => {
 
       {output}
 
-      <CharacterSheet char={CHARACTERS.ARIS} />
+      <CharacterSheet
+        char={characters.ARIS}
+        onChange={updatedChar => handleChangeCharacter('ARIS', updatedChar)}
+      />
     </div>
   )
 }
