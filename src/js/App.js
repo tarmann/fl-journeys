@@ -17,17 +17,18 @@ const App = () => {
   const [season, setSeason] = useState(SEASONS.SPRING);
   const [terrain, setTerrain] = useState(TERRAINS.DARK_FOREST);
   const [quarter, setQuarter] = useState(QUARTERS.MORNING);
+  const [selectedCharName, setSelectedCharName] = useState(null);
   const [characters, setCharacters] = useState(CHARACTERS_DATA);
+
+  const selectedCharacter = characters ? characters.find(i => i.name === selectedCharName) : null;
 
   const handleChangeActivities = (character, activity) => {
     setActivities({...activities, [character]: activity});
   }
 
   const handleChangeCharacter = (charName, updatedChar) => {
-    setCharacters({
-      ...characters,
-      [charName]: updatedChar
-    })
+    const updatedChars = characters.map(i => (i.name === charName) ? updatedChar : i)
+    setCharacters(updatedChars);
   }
 
   const setting = [
@@ -79,6 +80,7 @@ const App = () => {
         {characters.map((char) => (
           <ActivitySelect
             charName={char.name}
+            onSelectCharacter={charName => setSelectedCharName(charName)}
             onChange={updatedActivity => handleChangeActivities(char.name, updatedActivity)}
           />
         ))}
@@ -87,10 +89,15 @@ const App = () => {
 
       {output}
 
-      <CharacterSheet
-        char={characters[0]}
-        onChange={updatedChar => handleChangeCharacter('Aris', updatedChar)}
-      />
+      {selectedCharacter ? (
+        <>
+        <CharacterSheet
+          char={selectedCharacter}
+          onChange={updatedChar => handleChangeCharacter(selectedCharacter.name, updatedChar)}
+        />
+        <button onClick={() => setSelectedCharName(null)}>Close</button>
+      </>
+      ): null}
     </div>
   )
 }

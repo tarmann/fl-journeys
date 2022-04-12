@@ -4,7 +4,7 @@ import UISelect from './UISelect';
 
 import { ACTIVITIES } from '../constants/activities';
 
-const ActivitySelect = ({ charName, onChange }) => {
+const ActivitySelect = ({ charName, onSelectCharacter, onChange }) => {
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -17,7 +17,8 @@ const ActivitySelect = ({ charName, onChange }) => {
         />
       </div>
       <button onClick={() => setShowMore(!showMore)}>Show more</button>
-      
+      <button onClick={() => onSelectCharacter(charName)}>Edit</button>
+
       {showMore ? (
         <ul>
         <li><input type="checkbox" /> Hiking </li>
