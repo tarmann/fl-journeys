@@ -6,10 +6,14 @@ import { rollD6 } from '../utils/diceUtils';
 import Activity  from "./Activity";
 
 class ForageActivity extends Activity {
+  getName(){
+    return 'forage';
+  }
+
   getActivitySkill(){
     return SKILLS.SURVIVAL;
   }
-  
+
   getMod(){
     return this.options.isHiking ? -1 : 0;
   }

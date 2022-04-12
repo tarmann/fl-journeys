@@ -47,12 +47,6 @@ const App = () => {
       return doIt ? doIt(char, ...setting) : null;
     });
 
-  // render actions
-  const output = actionsOutput.map(action => {
-    if(!action) return null;
-    return <CharacterAction action={action} />;
-  });
-
   return (
     <div>
       <h1>Forbidden Lands</h1>
@@ -87,7 +81,9 @@ const App = () => {
       </div>
       <hr />
 
-      {output}
+      {actionsOutput.map(action => {
+        return !action ? <CharacterAction action={action} /> : null;
+      })}
 
       {selectedCharacter ? (
         <>

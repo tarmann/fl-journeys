@@ -19,6 +19,10 @@ class Activity {
     return this;
   }
 
+  getName(){
+    return 'activity';
+  }
+
   getIsDarkMod(){
     return getIsDarkMod(this.season, this.quarterName);
   }
@@ -42,11 +46,11 @@ class Activity {
   }
 
   getFailedResult(){
-    return `${this.char.name} failed. ${this.getMishap().result}`;
+    return `${this.char.name} failed ${this.getName()}. ${this.getMishap().result}`;
   }
 
   getSuccessResult(){
-    return `${this.char.name} is successful.`
+    return `${this.char.name} is successful on ${this.getName()}.`
   }
 
   getResult(){
@@ -54,7 +58,7 @@ class Activity {
       return this.getFailedResult();
     } else {
       return this.getSuccessResult();
-    }    
+    }
   }
 
   print(){
