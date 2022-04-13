@@ -4,7 +4,7 @@ import Activity  from "./Activity";
 
 class FishActivity extends Activity {
   getName(){
-    return 'name';
+    return 'fish';
   }
 
   getActivitySkill(){

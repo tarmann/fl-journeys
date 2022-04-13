@@ -23,6 +23,7 @@ const App = () => {
   const selectedCharacter = characters ? characters.find(i => i.name === selectedCharName) : null;
 
   const handleChangeActivities = (character, activity) => {
+    console.log(character, activity, activities)
     setActivities({...activities, [character]: activity});
   }
 
@@ -47,10 +48,15 @@ const App = () => {
       return doIt ? doIt(char, ...setting) : null;
     });
 
+  console.log(actionsOutput);
+
   return (
     <div>
       <h1>Forbidden Lands</h1>
       <h2>Journey Calculator</h2>
+
+
+
       <div>
         <UISelect
           value={season}
@@ -81,9 +87,7 @@ const App = () => {
       </div>
       <hr />
 
-      {actionsOutput.map(action => {
-        return !action ? <CharacterAction action={action} /> : null;
-      })}
+      {actionsOutput.map(action => <CharacterAction action={action} />)}
 
       {selectedCharacter ? (
         <>
