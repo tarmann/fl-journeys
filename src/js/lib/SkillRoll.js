@@ -13,7 +13,7 @@ class SkillRoll {
     this.skill = skill;
     this.mod = mod;
     this.baseAttr = BASE_SKILL_ATTRIBUTE[attr];
-    this.baseDice = char[`${baseAttr}Current`];
+    this.baseDice = char[`${baseAttr}_current`];
     this.skillDice = char[attr];
     this.modSkillDice = modSkillDice = totalSKillDice < 0 ? 0 : totalSKillDice;
   }

@@ -9,7 +9,7 @@ import {
 
 export const rollSkill = (char, attr, mod = 0) => {
   const baseAttr = BASE_SKILL_ATTRIBUTE[attr];
-  const baseDice = char[`${baseAttr}Current`];
+  const baseDice = char[`${baseAttr}_current`];
   const skillDice = char[attr];
   const totalSKillDice  = char[attr] + mod;
 

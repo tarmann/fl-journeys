@@ -3,12 +3,17 @@ import { createCharacter } from './utils/characterUtils';
 export const CHARACTERS_DATA = [
   createCharacter({
     name: 'Amergin',
-    strengthTotal: 3,
-    strengthCurrent: 3,
-    agilityTotal: 6,
-    agilityTotal: 6,
-    witsTotal: 3,
-    witsCurrent: 3,
+
+    strength: [3,3],
+    agility: [6,6],
+    wits: [3,3],
+
+    strength_total: 3,
+    strength_current: 3,
+    agility_total: 6,
+    agility_total: 6,
+    wits_total: 3,
+    wits_current: 3,
 
     survival: 3,
     scouting: 3
@@ -16,12 +21,12 @@ export const CHARACTERS_DATA = [
 
   createCharacter({
     name: 'Aris',
-    strengthTotal: 3,
-    strengthCurrent: 3,
-    agilityTotal: 6,
-    agilityCurrent: 6,
-    witsTotal: 3,
-    witsCurrent: 3,
+    strength_total: 3,
+    strength_current: 3,
+    agility_total: 6,
+    agility_current: 6,
+    wits_total: 3,
+    wits_current: 3,
 
     scouting: 3,
     survival: 3,
@@ -29,14 +34,14 @@ export const CHARACTERS_DATA = [
 
   createCharacter({
     name: 'Bepo',
-    strengthTotal: 3,
-    strengthCurrent: 3,
-    agilityTotal: 6,
-    agilityTotal: 6,
-    witsTotal: 3,
-    witsCurrent: 3,
-    empathyTotal: 3,
-    empathyCurrent: 3,
+    strength_total: 3,
+    strength_current: 3,
+    agility_total: 6,
+    agility_total: 6,
+    wits_total: 3,
+    wits_current: 3,
+    empathy_total: 3,
+    empathy_current: 3,
 
     melee: 2,
     stealth: 2,
@@ -52,14 +57,14 @@ export const CHARACTERS_DATA = [
 
   createCharacter({
     name: 'Hawkins',
-    strengthTotal: 2,
-    strengthCurrent: 2,
-    agilityTotal: 4,
-    agilityTotal: 4,
-    witsTotal: 2,
-    witsCurrent: 2,
-    empathyTotal: 6,
-    empathyCurrent: 6,
+    strength_total: 2,
+    strength_current: 2,
+    agility_total: 4,
+    agility_total: 4,
+    wits_total: 2,
+    wits_current: 2,
+    empathy_total: 6,
+    empathy_current: 6,
 
     performance: 2,
 

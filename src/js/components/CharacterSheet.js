@@ -11,14 +11,14 @@ const CharacterSheet = ({ char, onChange }) => {
     .map(attr => (
       <>
         <UIInput
-          name={`${attr}Total`}
-          value={char[`${attr}Total`]}
+          name={`${attr}_total`}
+          value={char[`${attr}_total`]}
           onChange={value => handleChange(`${attr}Total`, value)}
         />
         <UIInput
-          name={`${attr}Current`}
-          value={char[`${attr}Current`]}
-          onChange={value => handleChange(`${attr}Current`, value)}
+          name={`${attr}_current`}
+          value={char[`${attr}_current`]}
+          onChange={value => handleChange(`${attr}_current`, value)}
         />
       </>
     ));

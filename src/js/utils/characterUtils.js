@@ -2,6 +2,10 @@ export const createCharacter = (attrs) => {
   return {
     name: '',
 
+    strength: [2,2],
+    agility: [2,2],
+    wits: [2,2],
+
     strengthTotal: 0,
     strengthCurrent: 0,
     agilityTotal: 0,
